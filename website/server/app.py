@@ -7,6 +7,7 @@ messages = []
 
 @app.route("/")
 def hello():
+    context = { 'server_time': format_server_time() }
     return render_template('test.html', messages=messages)
     
 @app.route("/newpost", methods=['GET', 'POST'])
