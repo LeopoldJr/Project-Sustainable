@@ -16,8 +16,23 @@ body {
 
 .btn-xl {
   padding: 1.25rem 2.5rem;
+
+}
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
 }
 
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+.container {
+  padding: 2px 16px;
+}
 .content-section {
   padding-top: 7.5rem;
   padding-bottom: 7.5rem;
@@ -84,7 +99,7 @@ h6 {
 .scroll-to-top i {
   font-weight: 800;
 }
-
+/* Home Page*/
 .masthead {
   min-height: 30rem;
   position: relative;
@@ -110,6 +125,128 @@ h6 {
     height: 100vh;
   }
   .masthead h1 {
+    font-size: 5.5rem;
+  }
+}
+
+/* Lifestyle Page */
+
+.masthead2 {
+  min-height: 30rem;
+  position: relative;
+  display: table;
+  width: 100%;
+  height: auto;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../img/yoga-1812695_1280.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.masthead2 h1 {
+  font-size: 4rem;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 992px) {
+  .masthead2 {
+    height: 100vh;
+  }
+  .masthead2 h1 {
+    font-size: 5.5rem;
+  }
+}
+
+/* Spending Power Page*/
+
+.masthead3 {
+  min-height: 30rem;
+  position: relative;
+  display: table;
+  width: 100%;
+  height: auto;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../img/money-2724241_1920.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.masthead3 h1 {
+  font-size: 4rem;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 992px) {
+  .masthead3 {
+    height: 100vh;
+  }
+  .masthead3 h1 {
+    font-size: 5.5rem;
+  }
+}
+
+/* live map Page*/
+.masthead4 {
+  min-height: 30rem;
+  position: relative;
+  display: table;
+  width: 100%;
+  height: auto;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../img/earth-1149733_1920.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.masthead4 h1 {
+  font-size: 4rem;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 992px) {
+  .masthead4 {
+    height: 100vh;
+  }
+  .masthead4 h1 {
+    font-size: 5.5rem;
+  }
+}
+
+/* Energy Page*/
+.masthead5 {
+  min-height: 30rem;
+  position: relative;
+  display: table;
+  width: 100%;
+  height: auto;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../img/nuclear-power-plant-4535760_1920.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.masthead5 h1 {
+  font-size: 4rem;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 992px) {
+  .masthead5 {
+    height: 100vh;
+  }
+  .masthead5 h1 {
     font-size: 5.5rem;
   }
 }
