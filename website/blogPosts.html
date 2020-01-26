@@ -24,10 +24,10 @@
 
   <script>
 
-    function initializePosts(){
+    function initializePosts() {
       alert("TRIGGERED");
       const bookmarks = [];
-      
+
       bookmarks.push({ url: 'https://facebook.com' });
       bookmarks.push({ url: 'https://instagram.com' });
       bookmarks.push({ url: 'https://twitter.com' });
@@ -35,14 +35,19 @@
       var parentElement = document.getElementById('bookmarks');
 
       for (let bookmark of bookmarks) {
-          var childElement = document.createElement('div');
-          var appendChildElement = parentElement.appendChild(childElement)
-          appendChildElement.innerHTML = bookmark.url
+        var childElement = document.createElement('div');
+        var appendChildElement = parentElement.appendChild(childElement)
+        appendChildElement.innerHTML = bookmark.url
       }
     }
 
-    window.onload = initializePosts;
-  
+
+    window.onload = function () {
+      initializePosts();
+
+
+    };
+
   </script>
 
 
@@ -89,8 +94,11 @@
   <!-- Custom scripts for this template -->
   <script src="js/stylish-portfolio.min.js"></script>
 
+
   <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+
+  <script src="/__/firebase/7.7.0/firebase-firestore.js"></script>
 
   <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
@@ -108,7 +116,24 @@
     };
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
+
+    var db = firebase.firestore().then(() => {
+      const posts = [];
+      db.collection("blog-posts").get().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          posts.push({ title: doc.data().title, text: doc.data().text })
+          console.log(`${doc.id} => ${doc.data()}`);
+        });
+      }).then(() => {
+        alert("POSTS GRABBED");
+      });
+    });
+
   </script>
+
+
+
+
 
 </body>
 
