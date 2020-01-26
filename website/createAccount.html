@@ -27,7 +27,7 @@
       var email = document.getElementById('email').value;
       var password = document.getElementById('password').value;
       firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
-        location.reload();
+        location.replace("index.html");
       }).catch(function (error) {
         // Handle Errors here.
         alert("ERROR: " + error.message);
@@ -36,11 +36,10 @@
       });
     }
 
-    function handleSignOut(){
-      firebase.auth().signOut().then(function() {
-        alert("SIGNED OUT");
+    function handleSignOut() {
+      firebase.auth().signOut().then(function () {
         location.reload(true);
-      }).catch(function(error) {
+      }).catch(function (error) {
         location.reload(true);
       })
     }
@@ -55,7 +54,7 @@
         return;
       }
 
-      if(name.length < 2){
+      if (name.length < 2) {
         alert('Please enter a name.');
         return;
       }
@@ -67,13 +66,7 @@
       // Create user with email and pass.
       // [START createwithemail]
       firebase.auth().createUserWithEmailAndPassword(email, password).then(() => {
-        alert("LOGGED IN SUCCESFULLY " + name);
-        firebase.auth().currentUser.updateProfile({
-          displayName: name
-        }).catch(function(error){
-          alert(error);
-          
-        });
+        location.replace("index.html");
       }).catch(function (error) {
         // Handle Errors here.
         var errorCode = error.code;
@@ -82,7 +75,7 @@
         // [START_EXCLUDE]
         if (errorCode == 'auth/weak-password') {
           alert('The password is too weak.');
-        } 
+        }
         console.log(error);
         // [END_EXCLUDE]
       });
@@ -152,14 +145,14 @@
       initApp();
 
 
-      firebase.auth().onSignInSuccess()
-      firebase.auth().onAuthStateChanged(function (user) {
-        if (user) {
-          document.getElementById('userWelcomeMessage').innerHTML = "Welcome " + user.email;
-        } else {
-          document.getElementById('userWelcomeMessage').innerHTML = "No Dice";
-        }
-      });
+      firebase.auth().
+        firebase.auth().onAuthStateChanged(function (user) {
+          if (user) {
+            document.getElementById('userWelcomeMessage').innerHTML = "Welcome " + user;
+          } else {
+            document.getElementById('userWelcomeMessage').innerHTML = "No Dice";
+          }
+        });
     };
 
 
@@ -186,7 +179,7 @@
 
             <input type="button" id="signUpButton" value="Sign Up">
             <input type="button" id="signInButton" value="Sign In">
-            <input type="button" id="signOutButton" value ="Sign Out">
+            <input type="button" id="signOutButton" value="Sign Out">
 
           </form>
 
